@@ -2,7 +2,7 @@ const Express=require('express');
 var app=new Express();
 app.set('view engine','ejs');
 
-author=
+authors=
 [
     {
     name:'Benyamin',
@@ -57,37 +57,37 @@ author=
 nav=[
 {
     
-        link:"/author",
-        title:"author"
+        link:"/authors",
+        title:"authors"
 }
 ];
 app.use(Express.static(__dirname+"/public"));
 app.get('/',(req,res)=>{
-    res.render('b2');
+    res.render('home');
 });
 app.get('/home',(req,res)=>{
 
-    res.render('b2');
+    res.render('home');
 });
 app.get('/home/login',(req,res)=>{
    
-    res.render('b1');
+    res.render('login');
 });
 app.get('/home/register',(req,res)=>{
-    res.render('b3');
+    res.render('reg');
 });
-app.get('/home/add',(req,res)=>{
+app.get('/home/add1',(req,res)=>{
     
-    res.render('add');
+    res.render('add1');
 });
 
-app.get('/author',(req,res)=>{
-    res.render('author',{nav:nav,title:"Author",author:author});
+app.get('/authors',(req,res)=>{
+    res.render('authors',{nav:nav,title:"Author",authors:authors});
 });
-app.get('/more/:id',(req,res)=>{
+app.get('/readmore/:id',(req,res)=>{
 
     const y=req.params.id;
-    res.render('more',{nav:nav,title:"Author","author":author[y]});
+    res.render('readmore',{nav:nav,title:"Author","authors":authors[y]});
 });
 app.listen(process.env.PORT || 3000,()=>{
     console.log("server is running ")
