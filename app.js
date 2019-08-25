@@ -40,8 +40,16 @@ author=
     im:"/image/h.jpg",
     DOB:'30-09-1870',
     place:'america'
+},
+{
+    name:"Joseph Murphy",
+    im:"/image/i.jpg",
+    DOB:'16-12-1981',
+    place:'america'
+  
+    
+   
 }
-
 ]
 
 
